@@ -36,7 +36,7 @@ export const REALIZACJE: Realizacja[] = [
     desc: "Strona ligi na WordPressie z autorską wtyczką „KRS Wyniki”. Klasyfikacja generalna i wyniki każdej rundy pobierają się same z arkusza Excel co 15 minut, zawodnik rozwija własną kartę z punktami i najlepszym okrążeniem, a przycisk „Udostępnij” generuje w przeglądarce gotową grafikę na relację. Do tego kalendarz, tory, dane strukturalne i polityka prywatności. Ligę współzałożyłem — to projekt własny, nie zlecenie.",
     shot: "/realizacje/kartrace.jpg",
     shotAlt: "Strona główna kartraceseries.pl — ciemny hero z napisem Kart Race Series i gokartem",
-    caseHref: "/realizacje/kartrace-series",
+    caseHref: "/realizacje/kartrace-series/",
   },
   {
     name: "SP Trans",
