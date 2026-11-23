@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/scs/PageShell";
 import { TESTIMONIALS } from "@/lib/testimonials";
 import { TestimonialCard } from "@/components/scs/TestimonialCard";
 import { REALIZACJE } from "@/lib/realizacje";
+import { RealizacjaCard } from "@/components/scs/RealizacjaCard";
 
 const TITLE = "Referencje i opinie klientów — SCS Web";
 const DESCRIPTION =
@@ -82,26 +82,14 @@ function ReferencjePage() {
           <h2 className="display text-[clamp(1.6rem,3.5vw,2.4rem)] font-bold">
             Strony, które działają w sieci
           </h2>
-          <div className="mt-10 grid gap-px bg-hairline md:grid-cols-3">
+          <div className="mt-10 grid gap-px bg-hairline md:grid-cols-2 lg:grid-cols-3">
             {REALIZACJE.map((r) => (
-              <article key={r.href} className="flex h-full flex-col bg-background p-6 md:p-8">
-                <p className="eyebrow mb-3">{r.tag}</p>
-                <h3 className="display text-xl font-semibold">{r.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{r.branch}</p>
-                <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-muted-foreground">
-                  {r.desc}
-                </p>
-                <a
-                  href={r.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex min-h-[44px] items-center gap-2 font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
-                >
-                  {r.url}
-                  <ArrowUpRight strokeWidth={1.5} className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </article>
+              <div key={r.href} className="bg-background">
+                <RealizacjaCard r={r} />
+              </div>
             ))}
+            {/* Wypełniacz domykający ostatni rząd — patrz komentarz na stronie głównej. */}
+            <div className="hidden bg-background md:block" aria-hidden="true" />
           </div>
         </div>
       </section>
