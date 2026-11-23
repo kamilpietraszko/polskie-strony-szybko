@@ -25,6 +25,7 @@ import { NAV, GOOGLE_PROFILE_URL } from "@/lib/nav";
 import { BRANZE } from "@/lib/branze";
 import { TestimonialCard } from "@/components/scs/TestimonialCard";
 import { REALIZACJE } from "@/lib/realizacje";
+import { RealizacjaCard } from "@/components/scs/RealizacjaCard";
 
 const TITLE = "Strona internetowa dla firmy w 48h — SCS Web";
 const DESCRIPTION =
@@ -474,28 +475,15 @@ function Index() {
               title="Strony, które działają w sieci"
               lead="Adresy, pod które możesz wejść teraz i sprawdzić sam."
             />
-            <div className="grid gap-px bg-hairline md:grid-cols-3">
+            <div className="grid gap-px bg-hairline md:grid-cols-2 lg:grid-cols-3">
               {REALIZACJE.map((r, i) => (
                 <Reveal key={r.href} delay={i * 60} className="bg-background">
-                  <article className="flex h-full flex-col p-6 md:p-8">
-                    <p className="eyebrow mb-3">{r.tag}</p>
-                    <h3 className="display text-xl font-semibold md:text-2xl">{r.name}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{r.branch}</p>
-                    <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-muted-foreground">
-                      {r.desc}
-                    </p>
-                    <a
-                      href={r.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-6 inline-flex min-h-[44px] items-center gap-2 font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
-                    >
-                      {r.url}
-                      <ArrowUpRight strokeWidth={1.5} className="h-4 w-4" aria-hidden="true" />
-                    </a>
-                  </article>
+                  <RealizacjaCard r={r} />
                 </Reveal>
               ))}
+              {/* Pięć kart w siatce 2 albo 3 kolumn zostawia jedną pustą komórkę,
+                  która świeciłaby kolorem kreski. Ten wypełniacz domyka rząd. */}
+              <div className="hidden bg-background md:block" aria-hidden="true" />
             </div>
 
             {/* Podpisane referencje — świadomie TUTAJ, a nie w osobnej zakładce.
