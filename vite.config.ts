@@ -22,6 +22,7 @@ export default defineConfig({
       { path: "/", prerender: { enabled: true } },
       { path: "/kalkulator", prerender: { enabled: true } },
       { path: "/referencje", prerender: { enabled: true } },
+      { path: "/realizacje/kartrace-series", prerender: { enabled: true } },
       { path: "/branze/firmy-budowlane", prerender: { enabled: true } },
       { path: "/branze/hydraulik", prerender: { enabled: true } },
       { path: "/branze/warsztat-samochodowy", prerender: { enabled: true } },
